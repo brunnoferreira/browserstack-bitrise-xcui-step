@@ -13,7 +13,7 @@ func main() {
 	// Exit after 2hours 30 mins
 	time.AfterFunc(150*time.Minute, func() { failf("Session Timed Out") })
 
-	log.Print("Starting the build on BrowserStack App Automate")
+	log.Print("Starting the build on BrowserStack App Automate [FORKED]")
 
 	username := os.Getenv("browserstack_username")
 	access_key := os.Getenv("browserstack_accesskey")
