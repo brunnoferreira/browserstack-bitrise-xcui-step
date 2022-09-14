@@ -267,12 +267,12 @@ func locateTestRunnerFileAndZip(test_suite_location string) error {
 	} else if strings.Contains(get_file_name, "test_bundle") {
 		// if test_suite_location is a directory instead of the file, then check if runner app exits
 		if _, err := os.Stat(test_suite_location + TEST_RUNNER_RELATIVE_PATH_BITRISE); errors.Is(err, os.ErrNotExist) {
-			return errors.New(RUNNER_APP_NOT_FOUND)
+			return errors.New(RUNNER_APP_NOT_FOUND_2)
 		} else {
 			test_runner_app_path = test_suite_location + TEST_RUNNER_RELATIVE_PATH_BITRISE
 		}
 	} else {
-		return errors.New(RUNNER_APP_NOT_FOUND)
+		return errors.New(RUNNER_APP_NOT_FOUND_3)
 	}
 
 	_, err := exec.Command("cp", "-r", test_runner_app_path, ".").Output()

@@ -29,7 +29,7 @@ func main() {
 	}
 
 	if test_suite_path == "" {
-		failf(RUNNER_APP_NOT_FOUND)
+		failf(RUNNER_APP_NOT_FOUND_1)
 	}
 
 	find_and_zip_file_err := locateTestRunnerFileAndZip(test_suite_path)
