@@ -130,6 +130,8 @@ func createBuildPayload() BrowserStackPayload {
 		payload.UseTestSharding = sharding_data
 	}
 
+	fmt.Printf("\n\nSHARDING: %v\n\n", sharding_data)
+
 	payload.Devices, _ = getDevices()
 
 	return payload
