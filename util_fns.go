@@ -277,12 +277,12 @@ func locateAppFileAndIpa(test_suite_location string) error {
 		return errors.New(APP_APP_NOT_FOUND_2)
 	}
 
-	_, err := exec.Command("cp", "-r", test_runner_app_path, ".").Output()
+	_, err := exec.Command("cp", "-r", test_runner_app_path, "Payload/Application.app").Output()
 	if err != nil {
 		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, err))
 	}
 
-	_, zipping_err := exec.Command("zip", "-r", "-D", TEST_APP_ZIP_FILE_NAME, "Protowallex.app").Output()
+	_, zipping_err := exec.Command("zip", "-r", "-D", TEST_APP_ZIP_FILE_NAME, "Payload").Output()
 	if zipping_err != nil {
 		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, zipping_err))
 	}
