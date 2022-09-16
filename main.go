@@ -43,24 +43,6 @@ func main() {
 
 	test_runner_app := TEST_RUNNER_ZIP_FILE_NAME
 
-	log.Print("Uploading app on BrowserStack App Automate")
-
-	upload_app, err := upload(ios_app, APP_UPLOAD_ENDPOINT, username, access_key)
-
-	if err != nil {
-		failf(err.Error())
-	}
-
-	upload_app_parsed_response := jsonParse(upload_app)
-
-	if upload_app_parsed_response["app_url"] == "" {
-		failf(err.Error())
-	}
-
-	log.Print("Successfully uploaded the app")
-
-	app_url := upload_app_parsed_response["app_url"].(string)
-
 	log.Print("Uploading test suite on BrowserStack App Automate")
 
 	upload_test_suite, err := upload(test_runner_app, TEST_SUITE_UPLOAD_ENDPOINT, username, access_key)
@@ -78,6 +60,24 @@ func main() {
 	log.Print("Successfully uploaded the test suite")
 
 	test_suite_url := test_suite_upload_parsed_response["test_suite_url"].(string)
+
+	log.Print("Uploading app on BrowserStack App Automate")
+
+	upload_app, err := upload(ios_app, APP_UPLOAD_ENDPOINT, username, access_key)
+
+	if err != nil {
+		failf(err.Error())
+	}
+
+	upload_app_parsed_response := jsonParse(upload_app)
+
+	if upload_app_parsed_response["app_url"] == "" {
+		failf(err.Error())
+	}
+
+	log.Print("Successfully uploaded the app")
+
+	app_url := upload_app_parsed_response["app_url"].(string)
 
 	build_response, err := build(app_url, test_suite_url, username, access_key)
 
