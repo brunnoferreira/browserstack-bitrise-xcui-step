@@ -37,4 +37,7 @@ const (
 	RUNNER_APP_NOT_FOUND_4   = "Failure 4"
 	IPA_NOT_FOUND            = "app_ipa_path: couldn’t find the iOS app (.ipa file). Please add the $BITRISE_IPA_PATH from Xcode Archive & Export for iOS step or the absolute path of iOS app (.ipa file)"
 	FILE_ZIP_ERROR           = "Something went wrong while processing the test-suite, error: %s"
+	APP_COPY_ERROR           = "App copy, error: %s"
+	APP_DIR_ERROR            = "App dir, error: %s"
+	APP_ZIP_ERROR            = "App zip, error: %s"
 )

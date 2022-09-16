@@ -277,14 +277,19 @@ func locateAppFileAndIpa(test_suite_location string) error {
 		return errors.New(APP_APP_NOT_FOUND_2)
 	}
 
+	_, mkdir_err := exec.Command("mkdir", "Payload").Output()
+	if mkdir_err != nil {
+		return errors.New(fmt.Sprintf(APP_DIR_ERROR, mkdir_err))
+	}
+
 	_, err := exec.Command("cp", "-r", test_runner_app_path, "Payload/Application.app").Output()
 	if err != nil {
-		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, err))
+		return errors.New(fmt.Sprintf(APP_COPY_ERROR, err))
 	}
 
 	_, zipping_err := exec.Command("zip", "-r", "-D", TEST_APP_ZIP_FILE_NAME, "Payload").Output()
 	if zipping_err != nil {
-		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, zipping_err))
+		return errors.New(fmt.Sprintf(APP_ZIP_ERROR, zipping_err))
 	}
 
 	return nil
