@@ -33,7 +33,7 @@ func main() {
 	}
 
 	fmt.Printf("App: %v\n", ios_app)
-	fmt.Printf("Tests: %v", test_suite_path)
+	fmt.Printf("Tests: %v\n", test_suite_path)
 
 	find_and_zip_file_err := locateTestRunnerFileAndZip(test_suite_path)
 
