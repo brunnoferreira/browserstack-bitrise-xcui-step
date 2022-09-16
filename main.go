@@ -24,9 +24,9 @@ func main() {
 		failf(UPLOAD_APP_ERROR, "invalid credentials")
 	}
 
-	if ios_app == "" {
-		failf(IPA_NOT_FOUND)
-	}
+	// if ios_app == "" {
+	// 	failf(IPA_NOT_FOUND)
+	// }
 
 	if test_suite_path == "" {
 		failf(RUNNER_APP_NOT_FOUND_1)
