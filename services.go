@@ -16,7 +16,7 @@ import (
 
 func build(app_url string, test_suite_url string, username string, access_key string) (string, error) {
 	if app_url == "" || test_suite_url == "" {
-		return "", errors.New(FILE_NOT_AVAILABLE_ERROR)
+		return "", errors.New(FILE_ERROR_3)
 	}
 
 	payload_values := createBuildPayload()
@@ -58,7 +58,7 @@ func build(app_url string, test_suite_url string, username string, access_key st
 // this function uploads both app and test suite
 func upload(app_path string, endpoint string, username string, access_key string) (string, error) {
 	if app_path == "" {
-		return "", errors.New(FILE_NOT_AVAILABLE_ERROR)
+		return "", errors.New(FILE_ERROR_4)
 	}
 
 	payload := &bytes.Buffer{}
@@ -66,7 +66,7 @@ func upload(app_path string, endpoint string, username string, access_key string
 	file, fileErr := os.Open(app_path)
 
 	if fileErr != nil {
-		return "", errors.New(FILE_NOT_AVAILABLE_ERROR)
+		return "", errors.New(FILE_ERROR_7)
 	}
 
 	defer file.Close()
@@ -77,13 +77,13 @@ func upload(app_path string, endpoint string, username string, access_key string
 		fileErr := multipart_writer.CreateFormFile("file", filepath.Base(app_path))
 
 	if fileErr != nil {
-		return "", errors.New(FILE_NOT_AVAILABLE_ERROR)
+		return "", errors.New(FILE_ERROR_5)
 	}
 
 	_, fileErr = io.Copy(attached_file, file)
 
 	if fileErr != nil {
-		return "", errors.New(FILE_NOT_AVAILABLE_ERROR)
+		return "", errors.New(FILE_ERROR_6)
 	}
 
 	err := multipart_writer.Close()
