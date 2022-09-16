@@ -9,7 +9,9 @@ const (
 	APP_AUTOMATE_BUILD_STATUS_ENDPOINT = "/app-automate/xcuitest/v2/builds/"
 	APP_AUTOMATE_BUILD_DASHBOARD_URL   = "https://app-automate.browserstack.com/dashboard/v2/builds/"
 	TEST_RUNNER_RELATIVE_PATH_BITRISE  = "/Debug-iphoneos/Tests iOS-Runner.app"
+	TEST_APP_RELATIVE_PATH_BITRISE     = "/Debug-iphoneos/Protowallex.app"
 	TEST_RUNNER_ZIP_FILE_NAME          = "test_suite.zip"
+	TEST_APP_ZIP_FILE_NAME             = "proto.ipa"
 
 	SAMPLE_APP        = "bs://b91841adbf33515fef7a1cca869a9526a86f9a0e"
 	SAMPLE_TEST_SUITE = "bs://535a0932c8a785384b8470ec6166e093cd3b2c5f"
@@ -27,6 +29,8 @@ const (
 	BUILD_FAILED_ERROR       = "Failed to execute build on BrowserStack, error: %s"
 	FETCH_BUILD_STATUS_ERROR = "Failed to fetch test results, error: %s"
 	HTTP_ERROR               = "Something went wrong while processing your request, error: %s"
+	APP_APP_NOT_FOUND_1      = "App Failure 1"
+	APP_APP_NOT_FOUND_2      = "App Failure 2"
 	RUNNER_APP_NOT_FOUND_1   = "Failure 1"
 	RUNNER_APP_NOT_FOUND_2   = "Failure 2"
 	RUNNER_APP_NOT_FOUND_3   = "Failure 3"
