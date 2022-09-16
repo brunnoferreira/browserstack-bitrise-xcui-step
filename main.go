@@ -65,6 +65,8 @@ func main() {
 
 	log.Print("Successfully uploaded the app")
 
+	fmt.Printf("Response: %v\n", upload_app_parsed_response)
+
 	app_url := upload_app_parsed_response["app_url"].(string)
 
 	log.Print("Uploading test suite on BrowserStack App Automate")
