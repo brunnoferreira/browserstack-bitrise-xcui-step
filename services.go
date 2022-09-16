@@ -66,6 +66,7 @@ func upload(app_path string, endpoint string, username string, access_key string
 	file, fileErr := os.Open(app_path)
 
 	if fileErr != nil {
+		fmt.Printf("File error: %v\n", fileErr)
 		return "", errors.New(FILE_ERROR_7)
 	}
 
