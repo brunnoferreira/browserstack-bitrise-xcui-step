@@ -100,12 +100,12 @@ func TestLocateTestRunnerFileAndZip(t *testing.T) {
 	}
 	t.Log("It should zip the runner when correct path is passed")
 	{
-		devices := locateTestRunnerFileAndZip("./test/assets/Tests iOS-Runner.app")
+		devices := locateTestRunnerFileAndZip("./test/assets/AirwallexUITests-Runner.app")
 
 		require.NoError(t, devices)
 		assert.FileExists(t, TEST_RUNNER_ZIP_FILE_NAME)
 
-		os.Remove("Tests iOS-Runner.app")
+		os.Remove("AirwallexUITests-Runner.app")
 		os.Remove("test_suite.zip")
 	}
 }

@@ -324,7 +324,7 @@ func locateTestRunnerFileAndZip(test_suite_location string) error {
 		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, err))
 	}
 
-	_, zipping_err := exec.Command("zip", "-r", "-D", TEST_RUNNER_ZIP_FILE_NAME, "Tests iOS-Runner.app").Output()
+	_, zipping_err := exec.Command("zip", "-r", "-D", TEST_RUNNER_ZIP_FILE_NAME, "AirwallexUITests-Runner.app").Output()
 	if zipping_err != nil {
 		return errors.New(fmt.Sprintf(FILE_ZIP_ERROR, zipping_err))
 	}

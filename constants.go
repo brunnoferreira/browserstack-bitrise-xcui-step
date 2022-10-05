@@ -8,10 +8,10 @@ const (
 	APP_AUTOMATE_BUILD_ENDPOINT        = "/app-automate/xcuitest/v2/build"
 	APP_AUTOMATE_BUILD_STATUS_ENDPOINT = "/app-automate/xcuitest/v2/builds/"
 	APP_AUTOMATE_BUILD_DASHBOARD_URL   = "https://app-automate.browserstack.com/dashboard/v2/builds/"
-	TEST_RUNNER_RELATIVE_PATH_BITRISE  = "/Debug-iphoneos/Tests iOS-Runner.app"
-	TEST_APP_RELATIVE_PATH_BITRISE     = "/Debug-iphoneos/Protowallex.app"
+	TEST_RUNNER_RELATIVE_PATH_BITRISE  = "/Debug-iphoneos/AirwallexUITests-Runner.app"
+	TEST_APP_RELATIVE_PATH_BITRISE     = "/Debug-iphoneos/Airwallex.app"
 	TEST_RUNNER_ZIP_FILE_NAME          = "test_suite.zip"
-	TEST_APP_ZIP_FILE_NAME             = "proto.ipa"
+	TEST_APP_ZIP_FILE_NAME             = "awx.ipa"
 
 	SAMPLE_APP        = "bs://b91841adbf33515fef7a1cca869a9526a86f9a0e"
 	SAMPLE_TEST_SUITE = "bs://535a0932c8a785384b8470ec6166e093cd3b2c5f"
