@@ -51,7 +51,7 @@ func main() {
 
 	log.Print("Uploading app on BrowserStack App Automate")
 
-	upload_app, err := upload(test_app_app, APP_UPLOAD_ENDPOINT, username, access_key)
+	upload_app, err := upload(test_app_app, APP_UPLOAD_ENDPOINT, "test_id", username, access_key)
 
 	if err != nil {
 		failf(err.Error())
@@ -71,7 +71,7 @@ func main() {
 
 	log.Print("Uploading test suite on BrowserStack App Automate")
 
-	upload_test_suite, err := upload(test_runner_app, TEST_SUITE_UPLOAD_ENDPOINT, username, access_key)
+	upload_test_suite, err := upload(test_runner_app, TEST_SUITE_UPLOAD_ENDPOINT, "", username, access_key)
 
 	if err != nil {
 		failf(err.Error())
